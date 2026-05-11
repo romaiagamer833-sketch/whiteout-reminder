@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteout Survival Events Reminder</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background-color: #f0f8ff; 
+            color: #333; 
+        }
+        h1 { 
+            text-align: center; 
+            color: #4169e1; 
+        }
+        h2 { 
+            color: #4682b4; 
+            border-bottom: 2px solid #4169e1; 
+            padding-bottom: 10px; 
+        }
+        ul { 
+            list-style-type: none; 
+            padding: 0; 
+        }
+        li { 
+            background: #e6f3ff; 
+            margin: 10px 0; 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        }
+        .update-note { 
+            text-align: center; 
+            background: #fffacd; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin-bottom: 20px; 
+        }
+        input, button { 
+            padding: 10px; 
+            margin: 5px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        button { 
+            background: #4169e1; 
+            color: white; 
+            cursor: pointer; 
+        }
+        button:hover { 
+            background: #365899; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Whiteout Survival Events Reminder</h1>
+    <div class="update-note">
+        <strong>Note:</strong> Events rotate on weekly/monthly cycles (e.g., Hall of Heroes weekly Sun-Tue). Check in-game calendar for exact timings in your state.[web:1][web:17][web:20]
+    </div>
+
+    <h2>Solo Events</h2>
+    <ul>
+        <li>Defeat Nearby Beasts</li>
+        <li>Silver Shell Events</li>
+        <li>Snowbusters</li>
+        <li>Journey of Light</li>
+        <li>The Labyrinth</li>
+        <li>State Merger</li>
+        <li>Treasure Hunter</li>
+        <li>State Transfer Event</li>
+        <li>Symphony Of Change</li>
+        <li>Crystal Reactivation</li>
+        <li>Vault Of Enigma</li>
+        <li>Hero Rally</li>
+        <li>Weekly Benefits Card</li>
+        <li>Flame and Fang</li>
+        <li>Lucky Wheel</li>
+        <li>Return To Tundra</li>
+        <li>Mia Fortune</li>
+        <li>Gina’s Revenge</li>
+        <li>Hero’s Mission</li>
+        <li>Frosty Fortune</li>
+        <li>King of Icefield</li>
+        <li>Frostfire Mine</li>
+        <li>Sunfire Castle</li>
+        <li>Tundra Trading Station</li>
+        <li>Vision of Dawn</li>
+        <li>Hall of Heroes</li>
+        <li>Tundra Adventure</li>
+        <li>Brother in Arms (Kill Event)</li>
+        <li>Armament Competition</li>
+        <li>Officer Project</li>
+        <li>Fishing Tournament</li>
+    </ul>
+
+    <h2>Alliance Events</h2>
+    <ul>
+        <li>Tundra Trade Route</li>
+        <li>Alliance Showdown</li>
+        <li>Frostdragon Tyrant</li>
+        <li>Canyon Clash</li>
+        <li>SVS – State of Power</li>
+        <li>Foundry Battle</li>
+        <li>Bear Hunt</li>
+        <li>Crazy Joe</li>
+        <li>Alliance Championship</li>
+        <li>Sunfire Castle</li>
+        <li>Mercenary Prestige</li>
+        <li>Alliance Mobilization</li>
+    </ul>
+
+    <h2>Rookie Events</h2>
+    <ul>
+        <li>Tundra Star</li>
+        <li>Daybreak Expedition</li>
+        <li>Develop New Tech</li>
+        <li>Beast Whisperer</li>
+        <li>Trial Event</li>
+        <li>Grow Your Heroes</li>
+        <li>Working Overtime</li>
+        <li>Home & Beyond</li>
+        <li>City Development</li>
+        <li>Plan Your City</li>
+        <li>Stand of Arms</li>
+        <li>Trusted Chief</li>
+        <li>Power Up</li>
+        <li>War Preparation</li>
+        <li>Hall of Chief</li>
+    </ul>
+
+    <h2>Custom Reminders</h2>
+    <input type="text" id="eventInput" placeholder="Enter event name (e.g., State Transfer)...">
+    <input type="date" id="eventDate">
+    <button onclick="addReminder()">Add Reminder</button>
+    <ul id="remindersList" style="background: #f0fff0;"></ul>
+
+    <script>
+        function addReminder() {
+            const input = document.getElementById('eventInput');
+            const date = document.getElementById('eventDate');
+            const list = document.getElementById('remindersList');
+            if (input.value && date.value) {
+                const li = document.createElement('li');
+                li.textContent = `${input.value} on ${new Date(date.value).toLocaleDateString()}`;
+                li.style.background = '#90ee90';
+                li.style.margin = '10px 0';
+                li.style.padding = '15px';
+                li.style.borderRadius = '8px';
+                list.appendChild(li);
+                input.value = '';
+                date.value = '';
+            } else {
+                alert('Please enter both event name and date.');
+            }
+        }
+    </script>
+</body>
+</html>
